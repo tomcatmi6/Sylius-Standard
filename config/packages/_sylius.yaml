@@ -1,9 +1,9 @@
 imports:
     - { resource: "@SyliusCoreBundle/Resources/config/app/config.yml" }
-    - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
-    - { resource: "@SyliusApiBundle/Resources/config/app/config.yaml" }
-    - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusPayumBundle/Resources/config/app/config.yaml" }
+    - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusApiBundle/Resources/config/app/config.yaml" }
 
     - { resource: "../parameters.yaml" }
 
@@ -124,6 +124,9 @@ sylius_payment:
         payment:
             classes:
                 model: App\Entity\Payment\Payment
+        payment_request:
+            classes:
+                model: App\Entity\Payment\PaymentRequest
         gateway_config:
             classes:
                 model: App\Entity\Payment\GatewayConfig
@@ -174,6 +177,9 @@ sylius_promotion:
         catalog_promotion:
             classes:
                 model: App\Entity\Promotion\CatalogPromotion
+            translation:
+                classes:
+                    model: App\Entity\Promotion\CatalogPromotionTranslation
         catalog_promotion_action:
             classes:
                 model: App\Entity\Promotion\CatalogPromotionAction
@@ -183,6 +189,9 @@ sylius_promotion:
         promotion:
             classes:
                 model: App\Entity\Promotion\Promotion
+            translation:
+                classes:
+                    model: App\Entity\Promotion\PromotionTranslation
         promotion_rule:
             classes:
                 model: App\Entity\Promotion\PromotionRule
@@ -211,6 +220,9 @@ sylius_shipping:
             translation:
                 classes:
                     model: App\Entity\Shipping\ShippingMethodTranslation
+        shipping_method_rule:
+            classes:
+                model: App\Entity\Shipping\ShippingMethodRule
         shipping_category:
             classes:
                 model: App\Entity\Shipping\ShippingCategory
