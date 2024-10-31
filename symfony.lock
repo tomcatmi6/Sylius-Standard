@@ -124,9 +124,6 @@
     "egulias/email-validator": {
         "version": "2.1.5"
     },
-    "enshrined/svg-sanitize": {
-        "version": "0.15.4"
-    },
     "fakerphp/faker": {
         "version": "v1.12.0"
     },
