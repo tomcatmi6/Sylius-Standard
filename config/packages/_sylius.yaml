@@ -172,6 +172,9 @@ sylius_promotion:
         catalog_promotion:
             classes:
                 model: App\Entity\Promotion\CatalogPromotion
+            translation:
+                classes:
+                    model: App\Entity\Promotion\CatalogPromotionTranslation
         catalog_promotion_action:
             classes:
                 model: App\Entity\Promotion\CatalogPromotionAction
@@ -181,6 +184,9 @@ sylius_promotion:
         promotion:
             classes:
                 model: App\Entity\Promotion\Promotion
+            translation:
+                classes:
+                    model: App\Entity\Promotion\PromotionTranslation
         promotion_rule:
             classes:
                 model: App\Entity\Promotion\PromotionRule
@@ -209,6 +215,9 @@ sylius_shipping:
             translation:
                 classes:
                     model: App\Entity\Shipping\ShippingMethodTranslation
+        shipping_method_rule:
+            classes:
+                model: App\Entity\Shipping\ShippingMethodRule
         shipping_category:
             classes:
                 model: App\Entity\Shipping\ShippingCategory
