@@ -253,3 +253,9 @@ sylius_user:
             user:
                 classes:
                     model: App\Entity\User\UserOAuth
+
+when@test: &sylius_user_test
+    sylius_user:
+        encoder: plaintext
+
+when@test_cached: *sylius_user_test
