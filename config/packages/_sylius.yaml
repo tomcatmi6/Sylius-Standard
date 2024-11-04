@@ -49,6 +49,9 @@ sylius_channel:
                 model: App\Entity\Channel\Channel
 sylius_core:
     resources:
+        avatar_image:
+            classes:
+                model: App\Entity\User\AvatarImage
         product_image:
             classes:
                 model: App\Entity\Product\ProductImage
@@ -67,6 +70,9 @@ sylius_core:
         channel_pricing_log_entry:
             classes:
                 model: App\Entity\Channel\ChannelPricingLogEntry
+        shop_billing_data:
+            classes:
+                model: App\Entity\Channel\ShopBillingData
 
 sylius_currency:
     resources:
@@ -215,6 +221,9 @@ sylius_shipping:
             translation:
                 classes:
                     model: App\Entity\Shipping\ShippingMethodTranslation
+        shipping_method_rule:
+            classes:
+                model: App\Entity\Shipping\ShippingMethodRule
         shipping_category:
             classes:
                 model: App\Entity\Shipping\ShippingCategory
