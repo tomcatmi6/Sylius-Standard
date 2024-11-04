@@ -6,15 +6,10 @@ imports:
 
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
 
-    - { resource: "@SyliusPayPalPlugin/Resources/config/config.yaml" }
     - { resource: "../parameters.yaml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
-
-when@dev:
-    sylius_api:
-        enabled: true
 
 sylius_addressing:
     resources:
@@ -177,6 +172,9 @@ sylius_promotion:
         catalog_promotion:
             classes:
                 model: App\Entity\Promotion\CatalogPromotion
+            translation:
+                classes:
+                    model: App\Entity\Promotion\CatalogPromotionTranslation
         catalog_promotion_action:
             classes:
                 model: App\Entity\Promotion\CatalogPromotionAction
@@ -186,6 +184,9 @@ sylius_promotion:
         promotion:
             classes:
                 model: App\Entity\Promotion\Promotion
+            translation:
+                classes:
+                    model: App\Entity\Promotion\PromotionTranslation
         promotion_rule:
             classes:
                 model: App\Entity\Promotion\PromotionRule
@@ -250,13 +251,8 @@ sylius_user:
                 classes:
                     model: App\Entity\User\UserOAuth
 
-sylius_shop:
-    product_grid:
-        include_all_descendants: true
+when@test: &sylius_user_test
+    sylius_user:
+        encoder: plaintext
 
-sylius_theme:
-    sources:
-        filesystem:
-            scan_depth: 1
-            directories:
-                - "%kernel.project_dir%/themes"
+when@test_cached: *sylius_user_test
