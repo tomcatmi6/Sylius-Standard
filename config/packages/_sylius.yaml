@@ -47,6 +47,7 @@ sylius_channel:
         channel:
             classes:
                 model: App\Entity\Channel\Channel
+
 sylius_core:
     resources:
         avatar_image:
@@ -245,6 +246,7 @@ sylius_taxonomy:
             translation:
                 classes:
                     model: App\Entity\Taxonomy\TaxonTranslation
+
 sylius_user:
     resources:
         admin:
