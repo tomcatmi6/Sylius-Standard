@@ -1,6 +1,6 @@
 services:
     php:
-        image: ghcr.io/sylius/sylius-php:8.2-fixuid-xdebug-alpine
+        image: ghcr.io/sylius/sylius-php:8.3-fixuid-xdebug-alpine
         user: ${DOCKER_USER:-1000:1000}
         depends_on:
             mysql:
@@ -16,6 +16,8 @@ services:
             SYLIUS_MESSENGER_TRANSPORT_MAIN_FAILED_DSN: doctrine://default?queue_name=main_failed
             SYLIUS_MESSENGER_TRANSPORT_CATALOG_PROMOTION_REMOVAL_DSN: doctrine://default?queue_name=catalog_promotion_removal
             SYLIUS_MESSENGER_TRANSPORT_CATALOG_PROMOTION_REMOVAL_FAILED_DSN: doctrine://default?queue_name=catalog_promotion_removal_failed
+            SYLIUS_MESSENGER_TRANSPORT_PAYMENT_REQUEST_DSN: sync://
+            SYLIUS_MESSENGER_TRANSPORT_PAYMENT_REQUEST_FAILED_DSN: sync://
             PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
             XDEBUG_MODE: debug
             XDEBUG_CONFIG: >-
@@ -49,7 +51,7 @@ services:
         ports:
             - "80:80"
     nodejs:
-        image: node:${NODE_VERSION:-20}-alpine
+        image: node:${NODE_VERSION:-22}-alpine
         user: ${DOCKER_USER:-1000:1000}
         working_dir: /srv/sylius
         entrypoint: [ "/bin/sh","-c" ]
