@@ -1,6 +1,6 @@
 .PHONY: run
 
-DOCKER_COMPOSE ?= docker compose
+DOCKER_COMPOSE ?= docker-compose
 DOCKER_USER ?= "$(shell id -u):$(shell id -g)"
 ENV ?= "dev"
 

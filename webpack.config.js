@@ -10,6 +10,7 @@ Encore
   .setOutputPath('public/build/shop/')
   .setPublicPath('/build/shop')
   .addEntry('shop-entry', './vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private/entry.js')
+  .addEntry('custom-add-to-cart', './assets/shop/js/sylius-custom-add-to-cart.js')
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
